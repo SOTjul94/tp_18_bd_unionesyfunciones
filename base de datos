@@ -37,5 +37,5 @@ SELECCIONA   géneros . nombre , cuenta ( * ) AS generos
 DE peliculas
 UNIÓN INTERNA géneros ON   gender_id =  géneros . identificación
 AGRUPACIÓN POR  géneros . nombre
-HABIENDO  recuento ( * ) >=  3 ;
+HABIENDO  recuento 3  >=  ( * ) ;
 
