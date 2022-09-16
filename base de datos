@@ -1,0 +1,41 @@
+-- Micro desafío - Paso 1:
+SELECCIONA título, nombre
+DE la serie
+UNIÓN INTERNA géneros ON gender_id =  géneros . identificación ;
+SELECCIONE título, nombre, apellido
+DE episodios
+INNER JOIN actor_episode ON  episodios . id  = episodio_id
+INNER JOIN actores ON actor_id =  actores . identificación ;
+-- Micro desafío - Paso 2:
+SELECCIONE distinto nombre, apellido
+DE peliculas
+INNER JOIN actor_movie EN  películas . id  = movie_id
+INNER JOIN actores ON  actores . id  = actor_id
+DONDE título COMO  " %Guerra% " ;
+-- Micro desafío - Paso 3:
+SELECCIONA  películas . id , title, ifnull(name, " No tiene genero " ) AS genero
+DE peliculas
+IZQUIERDA ÚNETE géneros ON   gender_id =  géneros . identificación ;
+-- Micro desafío - Paso 4:
+SELECCIONE título, fechadoiff(fecha_finalización, fecha_versión) AS Duración
+DE la serie;
+-- Micro desafío - Paso 5:
+SELECCIONE nombre, apellido
+DE actores
+WHERE longitud(nombre) >  6 ORDEN POR nombre ASC ;
+
+SELECCIONE el  conteo ( * ) COMO  " Total "
+DE episodios;
+
+ Serie SELECCIONA . titulo , cuenta ( * ) AS temporadas
+DESDE las temporadas
+Serie INNER JOIN Serie ON  . id = temporadas . serie_id  
+Agrupar por  serie . título
+HABIENDO  cuenta ( * );
+
+SELECCIONA   géneros . nombre , cuenta ( * ) AS generos
+DE peliculas
+UNIÓN INTERNA géneros ON   gender_id =  géneros . identificación
+AGRUPACIÓN POR  géneros . nombre
+HABIENDO  recuento ( * ) >=  3 ;
+
